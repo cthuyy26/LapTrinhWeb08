@@ -1,0 +1,1163 @@
+=== Page 1 ===
+WEB
+PR33
+0479
+KHOA CÔNG NGHỆ THÔNG TIN
+BỘ MÔN CÔNG NGHỆ PHẦN MỀM
+LẬP TRÌNH WEB (WEBPR330479)
+THS. NGUYỄN HỮU TRUNG
+Restful API 
+trong
+Java Servlet
+
+=== Page 2 ===
+LT
+VB
+LT
+VB
+Thông tin Giảng viên
+ThS. Nguyễn Hữu Trung
+2
+ Ths. Nguyễn Hữu Trung
+ Khoa Công Nghệ Thông Tin
+ Trường Đại học Sư Phạm Kỹ Thuật TP .HCM
+ 090.861.7108
+ trungnh@hcmute.edu.vn
+ https://www.youtube.com/@baigiai
+
+
+=== Page 3 ===
+LT
+VB
+LT
+VB
+Nội dung
+ThS. Nguyễn Hữu Trung
+3
+ Restful API 
+ Jackson và ví dụ
+ Gson và ví dụ
+ Restful API trong Spring boot
+ Render Rest API to AJAX
+
+=== Page 4 ===
+LT
+VB
+LT
+VB
+API Web Service 
+là
+ 
+gì
+?
+ThS. Nguyễn Hữu Trung
+4
+APP IOTSTAR WEB IOTSTAR
+SERVER
+(JAVA, PHP , .NET)
+DATABASE
+(SQL SERVER, 
+MYSQL,..)
+Web service thì có 2 dạng:
+- SOAP: Sử dụng XML
+- REST: Sử dụng JSon
+Web Service là tập hợp các giao thức và tiêu
+chuẩn mở được sử dụng để trao đổi dữ liệu giữa
+các ứng dụng hoặc giữa các hệ thống.
+
+
+=== Page 5 ===
+LT
+VB
+LT
+VB
+API là gì?
+ThS. Nguyễn Hữu Trung
+5
+ API (Application Programming Interface): là một giao diện lập trình phần mềm trung gian hỗ trợ các ứng 
+dụng giao tiếp với nhau.
+ Chúng cho phép các ứng dụng khác giao tiếp hiệu quả với nhau và dùng được cho web-based system,
+operating system, database system, computer hardware, or software library.
+ Web API là mô hình được tạo ra nhằm mục đích hỗ trợ MVC như: routing, controller,action result, filter,
+loC container, model binder, unit test, injection. Đồng thời còn cung cấp tính năng cho phép Restful đầy
+đủ các phương thức: Get/ Post/ Put/ Delete dữ liệu.
+
+=== Page 6 ===
+LT
+VB
+LT
+VB
+Restful API ?
+ThS. Nguyễn Hữu Trung
+6
+ RESTful API là một tiêu chuẩn dùng trong việc thiết kế API cho các ứng dụng web (thiết kế Web services)
+để tiện cho việc quản lý các resource. Nó chú trọng vào tài nguyên hệ thống (tệp văn bản, ảnh, âm thanh,
+video, hoặc dữ liệu động…), bao gồm các trạng thái tài nguyên được định dạng và được truyền tải qua
+HTTP.
+ Dưới đây là 4 lệnh phổ biến nhất cho phép người dùng truy cập vào RESTful API:
+ GET: cho phép truy vấn object
+ POST: giúp tạo object mới
+ PUT: hỗ trợ sửa đổi hoặc thay thế một object
+ DELETE: loại bỏ một object
+ Hiện tại có 3 cơ chế Authorize chính:
+ HTTP Basic
+ JSON Web Token (JWT)
+ OAuth2
+
+=== Page 7 ===
+LT
+VB
+LT
+VB
+Status code
+ThS. Nguyễn Hữu Trung
+7
+ Khi chúng ta request một API nào đó thường thì sẽ có vài status code để nhận biết sau:
+ 200 OK – Trả về thành công cho những phương thức GET, PUT, PATCH hoặc DELETE.
+ 201 Created – Trả về khi một Resouce vừa được tạo thành công.
+ 204 No Content – Trả về khi Resource xoá thành công.
+ 304 Not Modified – Client có thể sử dụng dữ liệu cache.
+ 400 Bad Request – Request không hợp lệ
+ 401 Unauthorized – Request cần có auth.
+ 403 Forbidden – bị từ chối không cho phép.
+ 404 Not Found – Không tìm thấy resource từ URI
+ 405 Method Not Allowed – Phương thức không cho phép với user hiện tại.
+ 410 Gone – Resource không còn tồn tại, Version cũ đã không còn hỗ trợ.
+ 415 Unsupported Media Type – Không hỗ trợ kiểu Resource này.
+ 422 Unprocessable Entity – Dữ liệu không được xác thực
+ 429 Too Many Requests – Request bị từ chối do bị giới hạn
+
+=== Page 8 ===
+LT
+VB
+LT
+VB
+JSON là gì?
+ThS. Nguyễn Hữu Trung
+8
+ JSON(JavaScript Object Notation) là một kiểu định dạng dữ liệu tuân theo một quy luật nhất định mà 
+hầu hết các ngôn ngữ lập trình hiện nay đều có thể đọc được. JSON là một tiêu chuẩn mở để trao đổi dữ 
+liệu trên web.
+
+
+=== Page 9 ===
+LT
+VB
+LT
+VB
+Định dạng JSON
+ThS. Nguyễn Hữu Trung
+9
+  JSON sử dụng các cặp key – value để định dạng. Nó hỗ trợ các cấu trúc dữ liệu như đối tượng và mảng. 
+Ví dụ một tập tin có tên iotstar.json với nội dung như ở dưới đây sử dụng format kiểu JSON để lưu trữ 
+thông tin: 
+ { "name" : “iotstar", 
+    "title" : “Nguyễn Hữu Trung“
+ } 
+ Hai thư viện Json phổ biến: Gson và JackSon (Spring boot đã được tích hợp)
+
+=== Page 10 ===
+LT
+VB
+LT
+VB
+Hướng dẫn sử dụng Jackson
+ThS. Nguyễn Hữu Trung
+10
+ Jackson là một thư viện Java chứa rất nhiều chức năng để đọc và xây dựng JSON. Nó có khả năng ràng
+buộc dữ liệu rất mạnh mẽ và cung cấp một framework để tùy chỉnh quá trình chuyển đối tượng Java
+sang chuỗi JSON và chuỗi JSON sang đối tượng Java.
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+<dependency>
+<groupId>com.fasterxml.jackson.core</groupId>
+<artifactId>jackson-databind</artifactId>
+<version>2.13.0</version>
+</dependency>
+
+=== Page 11 ===
+LT
+VB
+LT
+VB
+Hướng dẫn sử dụng Jackson
+ThS. Nguyễn Hữu Trung
+11
+ Phân tích chuỗi JSON
+ Có 3 cách thường dùng để phân tích chuỗi JSON sang Java:
+◼ Streaming : sử dụng JsonParser để phân tích cú pháp json. Nó cung cấp các phần tử json như là các
+token. Sử dụng JsonGenerator để tạo ra json từ chuỗi, số nguyên, boolean, …
+◼ Tree Traversing : json có thể được đọc thành một JsonNode. Node sau đó có thể đi qua để có được
+thuộc tính cần thiết. Một cây cũng có thể được tạo ra và sau đó được viết như chuỗi json.
+◼ Data Binding (liên kết dữ liệu) : sử dụng Annotation để đánh dấu các thuộc tính trên đối tượng liên
+kết với các phần tử của chuỗi JSON.
+
+=== Page 12 ===
+LT
+VB
+LT
+VB
+Các ví dụ
+ThS. Nguyễn Hữu Trung
+12
+ Chuyển Java Object sang JSON
+ ObjectMapper mapper = new ObjectMapper();
+// Convert object to JSON string and save into a file directly
+mapper.writeValue(new File("data/result.json"), category); // Plain JSON
+// Convert object to JSON string
+String jsonInString = mapper.writeValueAsString(category);
+System.out.println("JSON: " + jsonInString);
+// Convert object to JSON string and pretty print
+jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(category);
+System.out.println("JSON pretty print: " + jsonInString);
+
+=== Page 13 ===
+LT
+VB
+LT
+VB
+Các ví dụ
+ThS. Nguyễn Hữu Trung
+13
+ Phân tích JSON sang Java Object
+       ObjectMapper mapper = new ObjectMapper();
+// Convert JSON string from file to Object
+CategoryModel category = mapper.readValue(new File("data/result.json"), CategoryModel.class);
+System.out.println(category);
+// Convert JSON string to Object
+String jsonInString = "{\“id\":1,\“name\":\“Quần áo nam\"}";
+student = mapper.readValue(jsonInString, CategoryModel.class);
+System.out.println(category);
+// Pretty print
+jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(category);
+System.out.println(jsonInString);
+
+=== Page 14 ===
+LT
+VB
+LT
+VB
+Các ví dụ
+ThS. Nguyễn Hữu Trung
+14
+ Chuyển Json Array sang Java List
+       ObjectMapper mapper = new ObjectMapper();
+CategoryModel category1 = getCategory(1);
+CategoryModel category2 = getCategory(2);
+CategoryModel[] categorys = { category1, category2 };
+// Convert array object to JSON string
+String jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(categorys);
+System.out.println("JSON: " + jsonInString);
+// Convert a JSON Array format to a Java List object
+List<CategoryModel> list = mapper.readValue(jsonInString, new TypeReference<List<CategoryModel>>() {
+});
+for (CategoryModel category : list) {
+System.out.println(category);
+}
+
+=== Page 15 ===
+LT
+VB
+LT
+VB
+Các ví dụ
+ThS. Nguyễn Hữu Trung
+15
+ Chuyển Json Object sang Java Map
+         ObjectMapper mapper = new ObjectMapper();
+CategoryModel cate = new CategoryModel(21, “Hữu Trung”);
+// Convert array object to JSON string
+String jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cate);
+System.out.println("JSON: " + jsonInString);
+// Convert a JSON to a Map
+Map<String, Object> map = mapper.readValue(jsonInString, new TypeReference<Map<String, Object>>() {
+});
+System.out.println("Map: " + map);
+
+=== Page 16 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+16
+ Bước 1: cấu hình thư viện Jackson trong file pom.xml
+<!-- json -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.13.0</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.13.0</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.13.0</version>
+</dependency>
+<dependency>
+    <groupId>org.codehaus.jackson</groupId>
+    <artifactId>jackson-mapper-asl</artifactId>
+    <version>1.9.13</version>
+</dependency>
+<dependency>
+    <groupId>org.codehaus.jackson</groupId>
+    <artifactId>jackson-core-asl</artifactId>
+    <version>1.9.13</version>
+</dependency>
+<!-- end json -->
+
+=== Page 17 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+17
+ Bước 2: Tạo Model Category
+public class CategoryModel implements Serializable {
+private int id;
+private String name;
+private String icon;
+//tạo constructor và Getter/Setter
+}
+
+=== Page 18 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+18
+ Bước 3: Tạo hàm thư viện
+package vn.iotstar.util;
+import java.io.BufferedReader;
+import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+public class HttpUtil {
+private String value;
+public HttpUtil (String value) {
+this.value = value;
+}
+public <T> T toModel(Class<T> tClass) {
+try {
+return new ObjectMapper().readValue(value, tClass);
+} catch (Exception e) {
+System.out.print(e.getMessage());
+}
+return null;
+}
+public <T> List<T>  listModel(Class<T> tClass) {
+List<T> list = new ArrayList<T>();
+try {
+list.add(new ObjectMapper().readValue(value, 
+tClass));
+} catch (Exception e) {
+System.out.print(e.getMessage());
+}
+return list;
+}
+
+=== Page 19 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+– ThS. Nguyễn Hữu Trung
+19
+ Bước 3: Tạo hàm thư viện
+public static HttpUtil of (BufferedReader reader) {
+StringBuilder sb = new StringBuilder();
+try {
+String line;
+    while ((line = reader.readLine()) != null) {
+        sb.append(line);
+    }
+} catch (IOException e) {
+System.out.print(e.getMessage());
+}
+return new HttpUtil(sb.toString());
+}
+}
+
+=== Page 20 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+20
+ Bước 4: Tạo các hàm Insert,getAll, Edit, Delete trong Service
+ Các bài trước đã viết
+ Bước 5: Tạo Controller
+package vn.iotstar.api.admin;
+import java.io.IOException;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import vn.iotstar.model.CategoryModel;
+import vn.iotstar.service.CategoryService;
+import vn.iotstar.service.impl.CategoryServiceImpl;
+import vn.iotstar.util.HttpUtil;
+@WebServlet(urlPatterns = {"/api-
+admin-category"})
+public class CategoryApiController 
+extends HttpServlet{
+CategoryService categoryService = 
+new CategoryServiceImpl();
+private static final long 
+serialVersionUID = 
+7733176626714241908L;
+
+=== Page 21 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+21
+ Bước 5: Tạo Controller
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, 
+IOException {
+ObjectMapper mapper = new ObjectMapper();
+req.setCharacterEncoding("UTF-8");
+resp.setContentType("application/json");
+List<CategoryModel> cateModel =  HttpUtil.of(req.getReader()).listModel(CategoryModel.class);
+cateModel = categoryService.getALLCategory();
+mapper.writeValue(resp.getOutputStream(), cateModel);
+}
+
+=== Page 22 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+22
+ Bước 5: Tạo Controller
+@Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, 
+IOException {
+ObjectMapper mapper = new ObjectMapper();
+req.setCharacterEncoding("UTF-8");
+resp.setContentType("application/json");
+CategoryModel cateModel =  HttpUtil.of(req.getReader()).toModel(CategoryModel.class);
+cateModel = categoryService.insert(cateModel);
+mapper.writeValue(resp.getOutputStream(), "{Đã thêm thành công}");
+}
+
+=== Page 23 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+23
+ Bước 5: Tạo Controller
+@Override
+protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, 
+IOException {
+ObjectMapper mapper = new ObjectMapper();
+req.setCharacterEncoding("UTF-8");
+resp.setContentType("application/json");
+CategoryModel cateModel =  HttpUtil.of(req.getReader()).toModel(CategoryModel.class);
+cateModel = categoryService.edit(cateModel);
+mapper.writeValue(resp.getOutputStream(), "{Đã cập nhật thành công}");
+}
+
+=== Page 24 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+24
+ Bước 5: Tạo Controller
+@Override
+protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, 
+IOException {
+ObjectMapper mapper = new ObjectMapper();
+req.setCharacterEncoding("UTF-8");
+resp.setContentType("application/json");
+CategoryModel cateModel =  HttpUtil.of(req.getReader()).toModel(CategoryModel.class);
+categoryService.delete(cateModel.getId());
+mapper.writeValue(resp.getOutputStream(), "{Đã xóa}");
+} }
+
+=== Page 25 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+25
+ Bước 6: Test kết quả bằng Postman:doGet
+
+
+=== Page 26 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+26
+ Bước 6: Test kết quả bằng Postman: doPost
+
+
+=== Page 27 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+27
+ Bước 6: Test kết quả bằng Postman: doPut
+
+
+=== Page 28 ===
+LT
+VB
+LT
+VB
+Viết CRUD API Sử dụng JackSon
+ThS. Nguyễn Hữu Trung
+28
+ Bước 6: Test kết quả bằng Postman: doDelete
+
+
+=== Page 29 ===
+LT
+VB
+LT
+VB
+GSON API?
+ThS. Nguyễn Hữu Trung
+29
+Gson là một thư viện Java có thể được sử dụng để chuyển đổi các đối tượng Java thành chuỗi JSON. Nó
+cũng có thể được sử dụng để chuyển đổi một chuỗi JSON thành một đối tượng Java tương ứng. Gson có
+thể làm việc với các đối tượng Java tùy ý bao gồm các đối tượng đã tồn tại từ trước mà bạn không có mã
+nguồn của nó.
+
+=== Page 30 ===
+LT
+VB
+LT
+VB
+Mục tiêu Gson:
+ThS. Nguyễn Hữu Trung
+30
+ Cung cấp các phương thức toJson() và fromJson() đơn giản để chuyển các đối tượng Java sang JSON và
+ngược lại.
+ Cho phép các đối tượng không thể thay đổi có sẵn được chuyển đổi sang/ từ JSON.
+ Hỗ trợ rộng rãi của Java Generics.
+ Cho phép tùy chỉnh cho các đối tượng để chuyển đổi sang/ từ JSON.
+ Hỗ trợ các đối tượng phức tạp (có phân cấp thừa kế nhiều cấp và sử dụng rộng rãi các kiểu dữ liệu
+Generics).
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+<groupId>com.google.code.gson</groupId>
+<artifactId>gson</artifactId>
+<version>2.8.6</version>
+</dependency>
+
+=== Page 31 ===
+LT
+VB
+LT
+VB
+Sử dụng Gson với kiểu dữ liệu nguyên thủy (primitives type)
+ThS. Nguyễn Hữu Trung
+31
+import com.google.gson.Gson;
+public class PrimitiveExample {
+public static void main(String[] args) {
+// Serialization
+Gson gson = new Gson();
+gson.toJson(40); // ==> 40
+gson.toJson(“Trung"); // ==> “Trung"
+gson.toJson(new Long(38)); // ==> 38
+int[] values = { 39 };
+gson.toJson(values); // ==> [39]
+// Deserialization
+int one = gson.fromJson(“40", int.class);// ==> 40
+Integer oneInteger = gson.fromJson(“38", Integer.class);// ==> 38
+Long oneLong = gson.fromJson(“39", Long.class);// ==> 39
+Boolean bool = gson.fromJson("false", Boolean.class); // ==> false
+String str = gson.fromJson("\“Trung\"", String.class);// ==> “Trung"
+String[] anotherStr = gson.fromJson("[\“trung\"]", String[].class);// ==> [“Trung"]
+}
+}
+
+=== Page 32 ===
+LT
+VB
+LT
+VB
+Sử dụng Gson với kiểu dữ liệu nguyên thủy (primitives type)
+ThS. Nguyễn Hữu Trung
+32
+public class CategoryModel implements Serializable {
+private int id;
+private String name;
+private String icon;
+}
+public static void main(String[] args) {
+ CategoryModel cate = new CategoryModel(1, “Quần áo nam");
+Gson gson = new Gson();
+// Serialization
+String json = gson.toJson(cate);
+System.out.println(json); // {“id":1,“nam":“Quần áo nam"}
+// Deserialization
+ CategoryModel cate1 = gson.fromJson(json, CategoryModel.class);
+System.out.println(cate1);
+}
+
+=== Page 33 ===
+LT
+VB
+LT
+VB
+Sử dụng Gson với Array
+ThS. Nguyễn Hữu Trung
+33
+public static void main(String[] args) {
+Gson gson = new Gson();
+int[] int1 = { 10, 20, 30, 40, 50 };
+String[] string1 = { “Trung", “Hữu", “Nguyễn" };
+// Serialization
+gson.toJson(int1); // ==> [10,20,30,40,50]
+gson.toJson(string1); // ==> [“Trung", “Hữu", “Nguyễn"]
+// Deserialization
+int[] int2 = gson.fromJson("[10,20,30,40,50]", int[].class);
+// ==> int2 will be same as int1
+}
+
+=== Page 34 ===
+LT
+VB
+LT
+VB
+Sử dụng Gson với Collection
+ThS. Nguyễn Hữu Trung
+34
+public static void main(String[] args) {
+Gson gson = new Gson();
+List<Integer> int1 = Arrays.asList(10,20,30,40,50);
+// Serialization
+String json = gson.toJson(int1);  // ==> json is [10,20,30,40,50]
+// Deserialization
+Type collectionType = new TypeToken<List<Integer>>(){}.getType();
+Collection<Integer> int2 = gson.fromJson(json, collectionType);
+// ==> int2 is same as int1
+}
+
+=== Page 35 ===
+LT
+VB
+LT
+VB
+public static void main(String[] args) {
+// Gson gson = new Gson();
+Gson gson = new GsonBuilder().setPrettyPrinting().create();
+List<CategoryModel> list = new ArrayList<CategoryModel>();
+list.add(new CategoryModel(1, “Quần áo nam"));
+list.add(new CategoryModel(2, “Quần áo nữ"));
+// Serialization
+String json = gson.toJson(list);  
+System.out.println(json);
+// Deserialization
+Type collectionType = new TypeToken<List<CategoryModel>>(){}.getType();
+List<CategoryModel> list2 = gson.fromJson(json, collectionType);
+// ==> list2 is same as list
+}
+Sử dụng Gson với Collection và Generic Type
+ThS. Nguyễn Hữu Trung
+35
+GsonBuilder().setPrettyPrinting().create() để tạo chuỗi 
+Json có format.
+
+=== Page 36 ===
+LT
+VB
+LT
+VB
+Sử dụng Gson với Map
+ThS. Nguyễn Hữu Trung
+36
+public static void main(String[] args) {
+Map<String, String> inMap = new HashMap<String, String>();
+ inMap.put("name", “Trung");
+inMap.put("site", "http://iotstar.vn");
+System.out.println("Input Map: " + inMap);
+Gson gson = new Gson();
+// Serialization
+String json = gson.toJson(inMap);
+System.out.println("Json: " + json); // {"site":"http://iotstar.vn","name":“Trung"}
+// Deserialization
+Type mapType = new TypeToken<Map<String, Object>>(){}.getType();
+Map<String, String> outMap = gson.fromJson(json, mapType);
+System.out.println("Output Map: " + outMap);
+}
+
+=== Page 37 ===
+LT
+VB
+LT
+VB
+CRUD API Category
+ThS. Nguyễn Hữu Trung
+37
+ Bước 2: Tạo Model CategoryModel
+<!-- Gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.8.6</version>
+</dependency>
+<!-- End Gson -->
+ Bước 1: Cấu hình thư viện Gson trong file pom.xml
+public class CategoryModel implements Serializable {
+private int id;
+private String name;
+private String icon;
+//tạo Constructor, getter/setter
+}
+
+=== Page 38 ===
+LT
+VB
+LT
+VB
+CRUD API Category
+ThS. Nguyễn Hữu Trung
+38
+ Bước 3: Viết hàm doGet trong Controller
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws 
+ServletException, IOException {
+//định dạng chuỗi dạng json
+resp.setContentType("application/json");
+resp.setCharacterEncoding("UTF-8");
+List<CategoryModel> list = new ArrayList<CategoryModel>();
+//gọi hàm lấy toàn bộ category trong Service
+list =  categoryService.getALLCategory();
+//Khởi tạo đối tượng Gson
+Gson gson = new Gson();
+//Gọi hàm toJson để chuyển Object thành String Json
+String cateJson = gson.toJson(list);
+//hiển thị kết quả
+PrintWriter out = resp.getWriter();
+out.write(cateJson);
+out.close();
+}
+
+=== Page 39 ===
+LT
+VB
+LT
+VB
+CRUD API Category
+ThS. Nguyễn Hữu Trung
+39
+ Bước 3: Viết hàm doPost trong Controller
+@Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, 
+IOException {
+resp.setContentType("application/json");
+resp.setCharacterEncoding("UTF-8");
+//String json = "{'name':'Trung','icon':'category/a2c11894eea4b_tn.png'}";
+Gson gson = new Gson(); //Khởi tạo đối tượng Gson
+//gọi hàm fromJson để chuyển từ String sang Object
+CategoryModel cateJson = gson.fromJson(req.getReader(), CategoryModel.class);
+//gọi hàm insert trong Service để thêm dữ liệu đối tượng vào database 
+cateJson=  categoryService.insert(cateJson);
+//Viết thông báo kết quả
+PrintWriter out = resp.getWriter();
+out.println("Đã thêm thành công");
+out.close();
+}
+
+=== Page 40 ===
+LT
+VB
+LT
+VB
+CRUD API Category
+ThS. Nguyễn Hữu Trung
+40
+ Bước 3: Viết hàm doPut trong Controller
+@Override
+protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, 
+IOException {
+resp.setContentType("application/json");
+resp.setCharacterEncoding("UTF-8");
+//String json = "{'name':'Trung','icon':'category/687f3967b94eea4b_tn.png'}";
+Gson gson = new Gson(); //Khởi tạo đối tượng Gson
+//gọi hàm fromJson để chuyển từ String sang Object
+CategoryModel cateJson = gson.fromJson(req.getReader(), CategoryModel.class);
+//gọi hàm edit trong Service để cập nhật dữ liệu đối tượng vào database 
+cateJson=  categoryService.edit(cateJson);
+//Viết thông báo kết quả
+PrintWriter out = resp.getWriter();
+out.println("Đã sửa thành công");
+out.close();
+}
+
+=== Page 41 ===
+LT
+VB
+LT
+VB
+CRUD API Category
+ThS. Nguyễn Hữu Trung
+41
+ Bước 3: Viết hàm doDelete trong Controller
+@Override
+protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, 
+IOException {
+resp.setContentType("application/json");
+resp.setCharacterEncoding("UTF-8");
+//String json = "{'name':'Trung','icon':'category/687f894eea4b_tn.png'}";
+Gson gson = new Gson(); //Khởi tạo đối tượng Gson
+//gọi hàm fromJson để chuyển từ String sang Object
+CategoryModel cateJson = gson.fromJson(req.getReader(), CategoryModel.class);
+//gọi hàm insert trong Service để thêm dữ liệu đối tượng vào database 
+categoryService.delete(cateJson.getId());
+//Viết thông báo kết quả
+PrintWriter out = resp.getWriter();
+out.println("Đã xóa thành công");
+out.close();
+}
+
+=== Page 42 ===
+LT
+VB
+LT
+VB
+CRUD API Category
+ThS. Nguyễn Hữu Trung
+42
+ Bước 4: Test kết quả trong Postman
+
+
+=== Page 43 ===
+WEB
+PR33
+0479
+KHOA CÔNG NGHỆ THÔNG TIN
+BỘ MÔN CÔNG NGHỆ PHẦN MỀM
+LẬP TRÌNH WEB (WEBPR330479)
+THS. NGUYỄN HỮU TRUNG
+RESTful API in Spring Boot 3
+ThS. Nguyễn Hữu Trung
+43
+
+=== Page 44 ===
+LT
+VB
+LT
+VB
+Sử dụng Annotation
+ThS. Nguyễn Hữu Trung
+44
+ @RestController annotation là sự kết hợp giữa @Controller và @ResponseBody annotations.
+ @RequestMapping("/api") để khai báo các url của các api trong controller này sẽ bắt đầu với '/api’
+ @ResponseStatus để chỉ định controller sẽ trả về status nào đó, ngay cả khi thực hiện thành công 
+ ResponseEntity<T>: Đây là cách sử dụng repsonse tốt nhất và mình khuyến khích sử dụng. Nó có ưu 
+điểm hơn hai cách trước như sau:
+ Không cần code dài dòng, class này có sử dụng builder nên dùng khá tiện
+ Với @ResponseStatus thì chỉ set cứng status code, tuy nhiên nếu mình muốn status code khác nhau 
+tùy vào điều kiện thì sao. ResponseEntity<T> sẽ giải quyết được hết.
+ Có thể vừa đặt data trong body, vừa tùy chỉnh header, vừa,... cùng lúc được luôn.
+ Trong code thì các bạn chỉ cần đổi return type của method từ return gì đó (tạm gọi là X) thành 
+kiểu ResponseEntity<X> là được.
+
+=== Page 45 ===
+LT
+VB
+LT
+VB
+Sử dụng @Controller và @ResponseBody Annotation
+ThS. Nguyễn Hữu Trung
+45
+ Với REST API, dữ liệu khi trả về sẽ nằm trong response body, dạng JSON. Nếu dùng @RestController thì 
+không cần @ResponseBody vì nó mặc định có rồi, còn ngược lại @Controller thì phải chỉ định rõ dữ liệu nằm 
+ở đâu trong response. 
+@Controller
+@RequestMapping("v1/api/category")
+public class CategoryAPIController {
+@Autowired
+private CategoryRepository repository;
+@RequestMapping("")
+@ResponseBody
+public ResponseEntity<?> list() { 
+return ResponseEntity.ok().body(repository.findAll());
+}
+}
+
+=== Page 46 ===
+LT
+VB
+LT
+VB
+Sử dụng @RestController Annotation
+ThS. Nguyễn Hữu Trung
+46
+ Với REST API, dữ liệu khi trả về sẽ nằm trong response body, dạng JSON. Nếu dùng @RestController thì 
+không cần @ResponseBody vì nó mặc định có rồi.
+@RestController
+@RequestMapping("v1/api/category")
+public class CategoryAPIController {
+@Autowired
+private CategoryRepository repository;
+@RequestMapping("")
+public ResponseEntity<?> list() { 
+ return ResponseEntity.ok().body(repository.findAll());
+}
+}
+
+=== Page 47 ===
+LT
+VB
+LT
+VB
+Sử dụng ResponseEntity<T>
+ThS. Nguyễn Hữu Trung
+47
+ ResponseEntity<T>: Đây là cách sử dụng repsonse tốt nhất và mình khuyến khích sử dụng. Nó có ưu điểm 
+hơn hai cách trước như sau:
+ Không cần code dài dòng, class này có sử dụng builder nên dùng khá tiện
+ Với @ResponseStatus thì chỉ set cứng status code, tuy nhiên nếu mình muốn status code khác nhau tùy 
+vào điều kiện thì sao. ResponseEntity<T> sẽ giải quyết được hết.
+ Có thể vừa đặt data trong body, vừa tùy chỉnh header, vừa,... cùng lúc được luôn.
+ Trong code thì các bạn chỉ cần đổi return type của method từ return gì đó (tạm gọi là X) thành 
+kiểu ResponseEntity<X> là được.
+
+=== Page 48 ===
+LT
+VB
+LT
+VB
+Sử dụng ResponseEntity<T>
+ThS. Nguyễn Hữu Trung
+48
+@GetMapping("/get")
+public ResponseEntity<CategoryEntity> 
+getCategory(@RequestParam("name") String categoryname) {
+// Tìm Category trong database bằng name
+Optional<CategoryEntity> category = 
+categoryService.findByName(categoryname);
+// Nếu không tìm thấy, trả về message lỗi 404 Not found
+if (category == null)
+// Tạm thời là vậy, thực tế người ta dùng AOP để bắt exception
+return ResponseEntity.notFound().build(); 
+// Nếu tìm thấy return 200 OK
+return ResponseEntity.ok(category.get());
+}
+
+=== Page 49 ===
+LT
+VB
+LT
+VB
+Sử dụng ResponseEntity<T>
+ThS. Nguyễn Hữu Trung
+49
+ ResponseEntity<T> có thể dùng 3 cách:
+ Tạo mới object dạng new ResponseEntity<>(category, HttpStatus.OK)
+ Dùng dạng static method ResponseEntity.ok(category)
+ Dùng dạng builder ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User not found").build()
+@GetMapping("/get")
+public ResponseEntity<CategoryEntity> getCategory(@RequestParam("name") String 
+categoryname) {
+// Tìm Category trong database bằng name
+Optional<CategoryEntity> category = categoryService.findByName(categoryname);
+// Nếu không tìm thấy, trả về message lỗi 404 Not found
+if (category == null)
+// Tạm thời là vậy, thực tế người ta dùng AOP để bắt exception
+// return ResponseEntity.notFound().build(); 
+return ((HeadersBuilder<BodyBuilder>) 
+ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User not found")).build();
+// Nếu tìm thấy return 200 OK
+// return ResponseEntity.ok(category.get());
+return new ResponseEntity<CategoryEntity>(category.get(),HttpStatus.OK);
+}
+
+=== Page 50 ===
+LT
+VB
+LT
+VB
+Sử dụng @Requestbody annotation
+ThS. Nguyễn Hữu Trung
+50
+ Request method PUT, POST mới có request body, đây là nơi chứa data chính để gửi lên. Thường thì
+request body sẽ ở dạng JSON hoặc form-data, khi vào controller sẽ được tự động parse ra thành Object
+(ví dụ Entity, DTO, Models chẳng hạn).
+@PostMapping(value = "/save")
+public CategoryEntity saveCate(@Valid
+@RequestBody CategoryEntity cate) {
+return categoryService.save(cate);
+}
+}
+
+
+=== Page 51 ===
+LT
+VB
+LT
+VB
+Sử dụng @Requestbody annotation
+ThS. Nguyễn Hữu Trung
+51
+ Update category
+@RequestMapping(value = "/update/{id}", 
+method = RequestMethod.PUT)
+public ResponseEntity<CategoryEntity> 
+updateCategory(@PathVariable(value = "id") 
+Long categoryid, 
+@Valid @RequestBody CategoryEntity 
+category) {
+Optional<CategoryEntity> cate = 
+categoryService.findById(categoryid);
+if(cate == null) {
+return ResponseEntity.notFound().build();
+}
+cate.get().setName(category.getName());
+CategoryEntity updatedContact = 
+categoryService.save(cate.get());
+return ResponseEntity.ok(updatedContact);
+}
+
+
+=== Page 52 ===
+LT
+VB
+LT
+VB
+Sử dụng @Requestbody annotation
+ThS. Nguyễn Hữu Trung
+52
+ Delete category
+@DeleteMapping(value = "/contact/{id}")
+public ResponseEntity<CategoryEntity> 
+deleteCategory(@PathVariable(value = "id") 
+Long categoryid) {
+Optional<CategoryEntity> cate = 
+categoryService.findById(categoryid);
+if(cate == null) {
+return ResponseEntity.notFound().build();
+}
+categoryService.delete(cate.get());
+return ResponseEntity.ok().build();
+}
+
+
+=== Page 53 ===
+LT
+VB
+LT
+VB
+Custom Response
+ThS. Nguyễn Hữu Trung
+53
+ Tạo class Response.java để chứa các trường thông tin muốn tùy chỉnh khi response về client.
+
+
+=== Page 54 ===
+LT
+VB
+LT
+VB
+Custom Response
+ThS. Nguyễn Hữu Trung
+54
+ Tạo class Response.java để chứa các trường thông tin muốn tùy chỉnh khi response về client.
+
+
+=== Page 55 ===
+WEB
+PR33
+0479
+KHOA CÔNG NGHỆ THÔNG TIN
+BỘ MÔN CÔNG NGHỆ PHẦN MỀM
+LẬP TRÌNH WEB (WEBPR330479)
+THS. NGUYỄN HỮU TRUNG
+Render Rest API to AJAX
+ThS. Nguyễn Hữu Trung
+55
+
+=== Page 56 ===
+LT
+VB
+LT
+VB
+Gọi thư viện Jquery và viết hàm thực hiện render
+ThS. Nguyễn Hữu Trung
+56
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+ <script src="/js/main.js"></script>
+ Hàm xử lý render sẽ viết trong file main.js
+
+
+=== Page 57 ===
+LT
+VB
+LT
+VB
+Gọi thư viện Jquery và viết hàm thực hiện render
+ThS. Nguyễn Hữu Trung
+57
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+ <script src="/js/main.js"></script>
+ Hàm xử lý render sẽ viết trong file main.js
+
+
+=== Page 58 ===
+LT
+VB
+LT
+VB
+Gọi thư viện Jquery và viết hàm thực hiện render
+ThS. Nguyễn Hữu Trung
+58
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+ <script src="/js/main.js"></script>
+ Gọi ra view
+<div class="container" style="min-height: 500px">
+<form action="" method="post">
+<label>Email</label>
+<input type="email" name ="email" id="email" required="required">
+<label>Password</label>
+<input type="password" name ="password" id="password" 
+required="required" autocomplete="on">
+<button id="Login" type="button">Login</button>
+</form>
+</div> <div class="container" style="min-height: 500px">
+<div class="starter-template">
+<h1>Spring Boot REST API with AJAX Example</h1>
+<img id="images" src="" alt="" width="100">
+<div id="profile"></div>
+<button id="logout">Logout</button>
+</div>
+</div>
+

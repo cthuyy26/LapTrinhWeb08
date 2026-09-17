@@ -1,0 +1,244 @@
+=== Page 1 ===
+WEB
+PR33
+0479
+KHOA CÔNG NGHỆ THÔNG TIN
+BỘ MÔN CÔNG NGHỆ PHẦN MỀM
+LẬP TRÌNH WEB (WEBPR330479)
+THS. NGUYỄN HỮU TRUNG
+GraphQL
+ & 
+RestFul
+ API 
+trong
+ Spring boot
+
+=== Page 2 ===
+LT
+VB
+LT
+VB
+ThS. Nguyễn Hữu Trung
+2
+
+
+=== Page 3 ===
+LT
+VB
+LT
+VB
+Giới thiệu GraphQL?
+ThS. Nguyễn Hữu Trung
+3
+• Là ngôn ngữ thao tác và truy vấn dữ liệu nguồn mở cho API
+• Cung cấp cách thức dễ dàng để request chính xác và vừa đủ.
+• Được Facebook phát triển vào năm 2012.
+GraphQL
+• Cho phép client xác định chính xác những dữ liệu gì họ cần
+• GraphQL làm cho việc tổng hợp dữ liệu từ nhiều nguồn dễ dàng 
+hơn
+• Sử dụng một type system để khai báo dữ liệu.
+Đặc trưng 
+của 
+GraphQL
+https://graphql.org/
+
+=== Page 4 ===
+LT
+VB
+LT
+VB
+Giới thiệu GraphQL?
+ThS. Nguyễn Hữu Trung
+4
+
+
+=== Page 5 ===
+LT
+VB
+LT
+VB
+ThS. Nguyễn Hữu Trung
+5
+ Trả về chính xác những gì bạn gửi request
+ Khi gửi 1 request GraphQL đến API, thì sẽ nhận được chính xác những gì được yêu
+cầu trong request, không hơn không kém.
+ Các truy vấn GraphQL luôn trả về kết quả có thể dự đoán được.
+ Các ứng dụng sử dụng GraphQL rất nhanh và ổn định vì GraphQL kiểm soát dữ liệu
+mà nó nhận được chứ không phải máy chủ.
+Giới thiệu GraphQL?
+
+=== Page 6 ===
+LT
+VB
+LT
+VB
+ThS. Nguyễn Hữu Trung
+6
+ Nhận nhiều dữ liệu trong một request duy nhất
+ Các câu query GraphQL không chỉ có thể truy xuất các thuộc tính của một dữ liệu mà còn làm việc trơn tru 
+với các đối tượng khác.
+ GraphQL có thể lấy tất cả dữ liệu mà ứng dụng của bạn cần trong một request duy nhất.
+ Các ứng dụng sử dụng GraphQL có tốc độ xử lý rất nhanh ngay cả trên các kết nối chậm (di động, IoTs).
+Giới thiệu GraphQL?
+
+
+=== Page 7 ===
+LT
+VB
+LT
+VB
+ThS. Nguyễn Hữu Trung
+7
+ Mô tả những gì có thể với một type system
+ API GraphQL được tổ chức theo type và fields, 
+truy cập toàn bộ dữ liệu của bạn từ một endpoint
+duy nhất.
+ GraphQL sử dụng các types để đảm bảo ứng dụng 
+của bạn chỉ request những gì có thể, ngoài ra 
+GraphQL còn giải thích các lỗi 1 cách rất dễ hiểu.
+ Ứng dụng của bạn có thể sử dụng các types để 
+tránh viết code phân tích cú pháp thủ công.
+Giới thiệu GraphQL?
+
+
+=== Page 8 ===
+LT
+VB
+LT
+VB
+Những điểm tương đồng giữa GraphQL và REST là gì?
+ThS. Nguyễn Hữu Trung
+8
+ REST và GraphQL cho phép bạn tạo, sửa đổi, cập nhật và xóa dữ liệu trên một ứng dụng, dịch vụ hoặc 
+mô-đun riêng biệt thông qua API.
+ Một máy khách gửi yêu cầu API đến một điểm cuối hoặc nhiều điểm cuối trên một máy chủ
+ Máy chủ cung cấp phản hồi có chứa dữ liệu, trạng thái dữ liệu hoặc mã lỗi
+ Kiến trúc: đều không có trạng thái, đều sử dụng mô hình máy khách – máy chủ.
+ Thiết kế dựa trên tài nguyên: Ví dụ: hãy xem xét một API mạng xã hội nơi người dùng tạo và quản lý bài 
+đăng. Trong API dựa trên tài nguyên, bài đăng sẽ là một tài nguyên. Nó có mã định danh duy nhất riêng, 
+ví dụ: /posts/1234. Đồng thời, nó có một tập hợp các thao tác, như GET để truy xuất bài đăng trong REST 
+hoặc query (truy vấn) để truy xuất bài đăng trong GraphQL.
+ Trao đổi dữ liệu: đều hỗ trợ các định dạng dữ liệu JSON, đều hỗ trợ khả năng ghi vào bộ nhớ đệm.
+ Tính trung lập về ngôn ngữ và cơ sở dữ liệu: Tính trung lập về ngôn ngữ và cơ sở dữ liệu.
+
+=== Page 9 ===
+LT
+VB
+LT
+VB
+GraphQL và REST khác nhau ở điểm nào?
+ThS. Nguyễn Hữu Trung
+9
+REST GraphQL
+Đó là gì?
+REST là một tập hợp các quy tắc định hình 
+quá trình trao đổi dữ liệu có cấu trúc giữa 
+một máy khách và một máy chủ.
+GraphQL là một ngôn ngữ truy vấn, kiểu kiến trúc 
+và tập hợp các công cụ để tạo và thao tác với các 
+API.
+Trường hợp sử 
+dụng phù hợp 
+nhất
+REST phù hợp với các nguồn dữ liệu đơn 
+giản trong đó tài nguyên được xác định rõ 
+ràng.
+GraphQL phù hợp với các nguồn dữ liệu lớn, phức 
+tạp và liên quan đến nhau.
+Truy cập dữ 
+liệu
+REST có nhiều điểm cuối dưới dạng URL để 
+xác định tài nguyên. GraphQL có một điểm cuối URL duy nhất.
+Dữ liệu trả về REST trả về dữ liệu theo một cấu trúc cố 
+định do máy chủ xác định.
+GraphQL trả về dữ liệu theo một cấu trúc linh hoạt 
+do máy khách xác định.
+Cách dữ liệu 
+được cấu trúc 
+và xác định
+Dữ liệu REST định kiểu yếu. Vì vậy, máy 
+khách phải quyết định cách diễn giải dữ liệu 
+đã định dạng khi dữ liệu được trả về.
+Dữ liệu GraphQL định kiểu mạnh. Vì vậy, máy 
+khách nhận dữ liệu theo định dạng đã xác định 
+trước và cả hai bên cùng hiểu.
+Kiểm tra lỗi
+Với REST, khách hàng phải kiểm tra xem dữ 
+liệu trả về có hợp lệ hay không. 200, 500, 
+401
+Với GraphQL, các yêu cầu không hợp lệ thường bị 
+cấu trúc lược đồ từ chối. Điều này làm xuất hiện 
+một thông báo lỗi được tự động tạo. 200, error
+
+=== Page 10 ===
+LT
+VB
+LT
+VB
+GraphQL cố gắng khắc phục những hạn chế nào của REST?
+ThS. Nguyễn Hữu Trung
+11
+ Trao đổi dữ liệu có cấu trúc cố định: API REST đòi hỏi các yêu cầu máy khách phải tuân theo một cấu
+trúc cố định để nhận tài nguyên. Cấu trúc cứng nhắc này rất dễ sử dụng, nhưng không phải lúc nào cũng
+là phương tiện hiệu quả nhất để trao đổi chính xác dữ liệu cần.
+ Lấy thừa dữ liệu và lấy thiếu dữ liệu: API REST luôn trả về một tập dữ liệu toàn bộ. Ví dụ: từ một đối
+tượng person (người) trong API REST, sẽ nhận được tên, ngày sinh, địa chỉ và số điện thoại của người đó.
+Thì sẽ nhận được tất cả dữ liệu này ngay cả khi chỉ cần lấy số điện thoại. Tương tự, nếu muốn biết số
+điện thoại của một người và lần mua gần đây nhất, bạn sẽ cần nhiều yêu cầu API REST. URL /person sẽ
+trả về số điện thoại và URL /purchase sẽ trả về lịch sử mua hàng.
+
+=== Page 11 ===
+LT
+VB
+LT
+VB
+Thời điểm nên sử dụng GraphQL hay REST
+ThS. Nguyễn Hữu Trung
+12
+ Có thể sử dụng các API GraphQL và REST thay thế cho nhau. Tuy nhiên, trong một số trường hợp sẽ có 
+một API phù hợp hơn API kia. Ví dụ: GraphQL có thể là lựa chọn tốt hơn nếu bạn có những cân nhắc sau:
+ Bạn có băng thông giới hạn và bạn muốn giảm thiểu số lượng yêu cầu và phản hồi
+ Bạn có nhiều nguồn dữ liệu và bạn muốn kết hợp chúng tại một điểm cuối
+ Bạn có các yêu cầu máy khách có sự khác biệt đáng kể và bạn muốn có các phản hồi rất khác nhau
+
+
+=== Page 12 ===
+LT
+VB
+LT
+VB
+GraphQL và Rest trong Spring boot
+ThS. Nguyễn Hữu Trung
+13
+REST
+GRAPHQL
+
+=== Page 13 ===
+LT
+VB
+LT
+VB
+ThS. Nguyễn Hữu Trung
+14
+
+
+=== Page 14 ===
+LT
+VB
+LT
+VB
+ThS. Nguyễn Hữu Trung
+15
+
+
+=== Page 15 ===
+LT
+VB
+LT
+VB
+Tạo product
+ThS. Nguyễn Hữu Trung
+16
+
+
