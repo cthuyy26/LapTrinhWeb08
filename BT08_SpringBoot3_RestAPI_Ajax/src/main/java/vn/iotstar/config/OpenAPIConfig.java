@@ -1,0 +1,25 @@
+package vn.iotstar.config;
+
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class OpenAPIConfig {
+
+    @Bean
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI()
+                .info(new Info()
+                        .title("BT08 - Spring Boot 3 RESTful API CRUD with AJAX")
+                        .version("1.0.0")
+                        .description("RESTful API cho quản lý Category và Product kết hợp giao diện Web AJAX và Swagger 3")
+                        .contact(new Contact()
+                                .name("Sinh viên thực hiện - BT08")
+                                .email("student@hcmute.edu.vn"))
+                        .license(new License().name("Apache 2.0").url("http://springdoc.org")));
+    }
+}
